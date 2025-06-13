@@ -3,6 +3,7 @@ import GuestLayout from "./layouts/GuestLayout"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Posts from "./pages/Posts"
+import SinglePost from "./pages/SinglePost"
 
 function App() {
 
@@ -14,7 +15,13 @@ function App() {
           <Route element={<GuestLayout />} >
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/posts" element={<Posts />} />
+            <Route path="/posts"  >
+
+              <Route path="" element={<Posts />} />
+
+              <Route path=":id" element={<SinglePost />} />
+
+            </Route>
 
           </Route>
 

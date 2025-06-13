@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import CardComponent from "../components/CardComponent";
 
 const Posts = () => {
 
@@ -14,9 +15,7 @@ const Posts = () => {
         axios.get(urlPosts)
             .then(resp => {
                 setPostsArr(resp.data);
-                console.log(resp.data)
-            }
-            )
+            })
 
     }, [])
 
@@ -31,15 +30,7 @@ const Posts = () => {
                         {postsArr.map((curPost, index) => (
 
                             < div className="col" key={index}>
-                                <div className="card" >
-                                    <div className="card-body">
-                                        <h5 className="card-title">{curPost.title}</h5>
-                                        <h6 className="card-subtitle mb-2 text-body-secondary">{curPost.author}</h6>
-                                        <p className="card-text over-text">{curPost.body}</p>
-                                        <Link to="/singlePost" className="card-link">Single Post</Link>
-                                        {/* <Link to="/posts" className="card-link">All Posts</Link> */}
-                                    </div>
-                                </div>
+                                <CardComponent curPost={curPost} single={false} />
                             </div>
 
                         )
