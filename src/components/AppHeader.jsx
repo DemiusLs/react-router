@@ -17,6 +17,11 @@ const AppHeader = () => {
             titolo: "AllPosts",
             url: "/posts"
         },
+
+        {
+            titolo: "Upload",
+            url: "/posts/upload"
+        },
     ];
 
 
