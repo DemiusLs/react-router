@@ -34,8 +34,8 @@ const AppHeader = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            {navLinks.map((curEl) => (
-                                <li className="nav-item">
+                            {navLinks.map((curEl, index) => (
+                                <li key={index} className="nav-item">
                                     <NavLink className="nav-link " aria-current="page" to={curEl.url}> {curEl.titolo}</NavLink></li>
 
                             ))}
